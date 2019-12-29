@@ -1,5 +1,3 @@
-[TOC]
-
 # concurrent_log
 支持多进程多线程环境使用的日志处理器
 
