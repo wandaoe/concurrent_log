@@ -41,7 +41,7 @@ class ConcurrentTimedRotatingFileHandlerTest:
             'handlers': {
                 'file': {
                     'level': 'DEBUG',
-                    'class': 'concurrent_log.ConcurrentTimedRotatingFileHandler',
+                    'class': 'logging.handlers.ConcurrentTimedRotatingFileHandler',
                     'backupCount': 100,
                     'when': 's',
                     'delay': True,
@@ -104,7 +104,7 @@ class TimedRotatingFileHandlerTest:
             'handlers': {
                 'file': {
                     'level': 'DEBUG',
-                    'class': 'concurrent_log.TimedRotatingFileHandler',
+                    'class': 'logging.handlers.TimedRotatingFileHandler',
                     'backupCount': 100,
                     'when': 's',
                     'delay': True,
@@ -157,5 +157,4 @@ if __name__ == "__main__":
     TimedRotatingFileHandlerTest().mutil_thread_write_log()
     use_time = time.time() - begin_time
     print("TimedRotatingFileHandler 耗时:%s秒", use_time)
-
 ```
