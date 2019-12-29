@@ -3,6 +3,8 @@ import setuptools
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
+install_requires = ['portalocker>=1.5.2']
+
 setuptools.setup(
     name="huanghyw", # Replace with your own username
     version="0.0.1",
@@ -11,6 +13,7 @@ setuptools.setup(
     description="多进程并发日志处理器",
     long_description=long_description,
     long_description_content_type="text/markdown",
+    install_requires=install_requires,
     url="https://github.com/huanghyw/concurrent_log",
     packages=setuptools.find_packages(),
     classifiers=[
