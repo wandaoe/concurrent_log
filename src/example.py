@@ -24,7 +24,7 @@ class ConcurrentTimedRotatingFileHandlerTest:
             'handlers': {
                 'file': {
                     'level': 'DEBUG',
-                    'class': 'concurrent_log.ConcurrentTimedRotatingFileHandler',
+                    'class': 'logging.handlers.ConcurrentTimedRotatingFileHandler',
                     'backupCount': 100,
                     'when': 's',
                     'delay': True,
@@ -87,7 +87,7 @@ class TimedRotatingFileHandlerTest:
             'handlers': {
                 'file': {
                     'level': 'DEBUG',
-                    'class': 'concurrent_log.TimedRotatingFileHandler',
+                    'class': 'logging.handlers.TimedRotatingFileHandler',
                     'backupCount': 100,
                     'when': 's',
                     'delay': True,

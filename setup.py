@@ -7,7 +7,7 @@ install_requires = ['portalocker>=1.5.2']
 
 setuptools.setup(
     name="concurrent_log",
-    version="0.0.1",
+    version="1.0.0",
     author="HuangYiwei",
     author_email="huanghyw@gmail.com",
     description="多进程并发日志处理器",
@@ -15,7 +15,8 @@ setuptools.setup(
     long_description_content_type="text/markdown",
     install_requires=install_requires,
     url="https://github.com/huanghyw/concurrent_log",
-    packages=setuptools.find_packages(),
+    packages=['concurrent_log'],
+    package_dir={'': 'src', },
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
