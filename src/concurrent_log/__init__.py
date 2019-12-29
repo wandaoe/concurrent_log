@@ -163,8 +163,7 @@ class ConcurrentTimedRotatingFileHandler(TimedRotatingFileHandler):
         with open(dfn, mode="a", encoding=self.encoding) as file:
             file.write(self.format(record) + self.terminator)
 
-# Publish this class to the "logging.handlers" module so that it can be use
-# from a logging config file via logging.config.fileConfig().
+# 添加当前类到 "logging.handlers" 模块中，使logging.config.fileConfig()进行配置时可以使用
 import logging.handlers
 
 logging.handlers.ConcurrentRotatingFileHandler = ConcurrentTimedRotatingFileHandler
