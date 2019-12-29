@@ -6,7 +6,7 @@ with open("README.md", "r") as fh:
 install_requires = ['portalocker>=1.5.2']
 
 setuptools.setup(
-    name="huanghyw", # Replace with your own username
+    name="concurrent_log",
     version="0.0.1",
     author="HuangYiwei",
     author_email="huanghyw@gmail.com",
