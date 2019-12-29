@@ -1,18 +1,21 @@
+[TOC]
+
 # concurrent_log
 支持多进程多线程环境使用的日志处理器
 
 ## ConcurrentTimedRotatingFileHandler
+
+### 支持的功能
 1. 按照时间进行切割日志  
 1. 支持多进程多线程环境使用
 
-## 使用方法
-与标准库`TimedRotatingFileHandler`完全兼容
+### 怎么用  
+与标准库`TimedRotatingFileHandler`完全兼容。  
+如果项目已经使用了`TimedRotatingFileHandler`，来进行日志处理，因为引入了多进程机制需要一个支持多进程环境的日志处理器，只需要在
+日志配置界面引入`concurrent_log`模块，然后将`TimedRotatingFileHandler`替换为`ConcurrentTimedRotatingFileHandler`即
+可，其他代码不需要任何改动。
 
-如果项目已经使用了`TimedRotatingFileHandler`，来进行日志处理，因为引入了多进程机制需要一个支持多进程环境的日志处理器，只需要在日志配置界面
-引入`concurrent_log`模块，然后将`TimedRotatingFileHandler`替换为`ConcurrentTimedRotatingFileHandler`即可，其他代码
-不需要任何改动。
-
-示例代码：
+### 示例代码
 ```
 import time
 from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
