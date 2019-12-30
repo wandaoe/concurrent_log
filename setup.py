@@ -1,13 +1,13 @@
 import setuptools
 
-with open("README.md", "r") as fh:
+with open("README.md", "r", encoding="utf-8") as fh:
     long_description = fh.read()
 
 install_requires = ['portalocker>=1.5.2']
 
 setuptools.setup(
     name="concurrent_log",
-    version="1.0.0",
+    version="1.0.1",
     author="HuangYiwei",
     author_email="huanghyw@gmail.com",
     description="多进程并发日志处理器",
