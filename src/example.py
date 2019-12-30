@@ -130,13 +130,13 @@ class TimedRotatingFileHandlerTest:
 if __name__ == "__main__":
     print("50W日志写入测试")
     begin_time = time.time()
-    # 多进程写入日志，进程数与CPU核心数一致，使用文件锁实现线程并发控制，防止脏数据以及日志丢失
-    # 每个进程100个线程共需写入五千行日志，由于GIL原因，并发只存在一个线程，但是会存在线程上下文切换，同样需要锁机制防止脏数据和日志丢失
+    # 多进程写入日志，进程数与CPU核心数一致，使用文件锁实现进程并发控制，防止脏数据以及日志丢失
+    # 每个进程100个线程共需写入五千行日志，由于GIL原因，并发只存在一个线程，但是会存在线程上下文切换，使用线程锁防止脏数据和日志丢失
     ConcurrentTimedRotatingFileHandlerTest().mutil_process_write_log()
     use_time = time.time() - begin_time
-    print("ConcurrentTimedRotatingFileHandler 耗时:%s秒", use_time)
+    print("ConcurrentTimedRotatingFileHandler 耗时:%s秒" % use_time)
     begin_time = time.time()
     # 每个进程100个线程共需写入所有日志，由于GIL原因，并发只存在一个线程，但是会存在线程上下文切换，同样需要锁机制防止脏数据和日志丢失
     TimedRotatingFileHandlerTest().mutil_thread_write_log()
     use_time = time.time() - begin_time
-    print("TimedRotatingFileHandler 耗时:%s秒", use_time)
+    print("TimedRotatingFileHandler 耗时:%s秒" % use_time)
