@@ -14,7 +14,7 @@
 可，其他代码不需要任何改动。
 
 ### 示例代码
-```
+```python
 import time
 from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor
 
