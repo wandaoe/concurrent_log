@@ -7,6 +7,11 @@
 1. 按照时间进行切割日志  
 1. 支持多进程多线程环境使用
 
+### 安装
+```shell script
+pip install concurrent-log
+```
+
 ### 怎么用  
 与标准库`TimedRotatingFileHandler`完全兼容。  
 如果项目已经使用了`TimedRotatingFileHandler`，来进行日志处理，因为引入了多进程机制需要一个支持多进程环境的日志处理器，只需要在
